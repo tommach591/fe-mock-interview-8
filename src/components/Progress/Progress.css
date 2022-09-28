@@ -1,0 +1,17 @@
+.Progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.Outside {
+  background-color: rgb(233, 233, 233);
+  border-radius: 0.5rem;
+}
+
+.Inside {
+  background-color: rgb(62, 122, 235);
+  height: 10px;
+  border-radius: 1rem;
+}

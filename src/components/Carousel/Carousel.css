@@ -1,0 +1,10 @@
+.Carousel {
+  border: 1px solid black;
+  width: 35rem;
+}
+
+.Top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

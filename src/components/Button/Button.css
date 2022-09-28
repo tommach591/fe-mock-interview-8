@@ -1,0 +1,30 @@
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 3rem;
+  width: 3rem;
+  margin: 2rem;
+  border-radius: 0.5rem;
+}
+
+.Button:hover {
+  cursor: pointer;
+}
+
+.Forward {
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid black;
+}
+
+.Backward {
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid black;
+}
