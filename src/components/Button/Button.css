@@ -28,3 +28,23 @@
   border-bottom: 12px solid transparent;
   border-right: 12px solid black;
 }
+
+@media (max-width: 450px) {
+  .Button {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 1rem;
+  }
+
+  .Forward {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid black;
+  }
+
+  .Backward {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid black;
+  }
+}

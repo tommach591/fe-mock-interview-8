@@ -7,4 +7,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 7rem;
+  margin-bottom: 8rem;
+}
+
+.Picture > img {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 450px) {
+  .Carousel {
+    border: 1px solid black;
+    width: 21rem;
+    height: 21rem;
+  }
+
+  .Picture > img {
+    width: 90%;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  .Top {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }

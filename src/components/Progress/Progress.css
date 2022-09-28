@@ -15,3 +15,10 @@
   height: 10px;
   border-radius: 1rem;
 }
+
+@media (max-width: 450px) {
+  .Progress {
+    display: block;
+    text-align: center;
+  }
+}

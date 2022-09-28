@@ -1,7 +1,7 @@
 import "./Progress.css";
 
 function Progress({ seconds, time }) {
-  let width = 300;
+  let width = 275;
   let percent = width - (seconds / (time / 1000)) * width;
 
   return (
