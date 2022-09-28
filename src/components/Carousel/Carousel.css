@@ -1,9 +1,22 @@
-.Carousel {
+.Box {
   border: 1px solid black;
   width: 35rem;
 }
 
-.Top {
+.WhiteBox {
+  background-color: blue;
+  width: 35rem;
+}
+
+.Left {
+  left: 15rem;
+}
+
+.Right {
+  right: 15rem;
+}
+
+.TopSection {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,13 +24,62 @@
   margin-bottom: 8rem;
 }
 
+.Picture {
+  width: 20rem;
+}
+
 .Picture > img {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
 
+.Picture > img[slide="1"] {
+  animation: leftSlide 1s 1;
+}
+
+.Picture > img[slide="-1"] {
+  animation: rightSlide 1s 1;
+}
+
+@keyframes leftSlide {
+  from {
+    margin-left: 60%;
+  }
+
+  to {
+    margin-left: 7.75%;
+  }
+}
+
+@keyframes rightSlide {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 7.75%;
+  }
+}
+
+.Empty {
+  border: 1px solid rgb(200, 200, 200);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.Filled {
+  border: 1px solid rgb(62, 122, 235);
+  background-color: rgb(62, 122, 235);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
 @media (max-width: 450px) {
-  .Carousel {
+  .Box {
     border: 1px solid black;
     width: 21rem;
     height: 21rem;

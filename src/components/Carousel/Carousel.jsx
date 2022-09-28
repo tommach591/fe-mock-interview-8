@@ -2,28 +2,36 @@ import { useCallback, useEffect, useState } from "react";
 import "./Carousel.css";
 import Progress from "../Progress";
 import Button from "../Button";
+import Dots from "../Dots";
 
 function Carousel({ images, time }) {
   const [index, setIndex] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [slide, setSlide] = useState(0);
 
   const cycleForward = useCallback(() => {
-    if (index < images.length - 1) {
-      setIndex(index + 1);
-    } else {
-      setIndex(0);
+    if (slide === 0) {
+      if (index < images.length - 1) {
+        setIndex(index + 1);
+      } else {
+        setIndex(0);
+      }
+      setSeconds(0);
+      setSlide(-1);
     }
-    setSeconds(0);
-  }, [index, images]);
+  }, [index, images, slide]);
 
   const cycleBackward = useCallback(() => {
-    if (index > 0) {
-      setIndex(index - 1);
-    } else {
-      setIndex(images.length - 1);
+    if (slide === 0) {
+      if (index > 0) {
+        setIndex(index - 1);
+      } else {
+        setIndex(images.length - 1);
+      }
+      setSeconds(0);
+      setSlide(1);
     }
-    setSeconds(0);
-  }, [index, images]);
+  }, [index, images, slide]);
 
   useEffect(() => {
     let delay = 10;
@@ -41,14 +49,22 @@ function Carousel({ images, time }) {
 
   return (
     <div className="Carousel">
-      <div className="Top">
-        <Button functionality={cycleBackward} forward={false} />
-        <div className="Picture">
-          <img src={images[index]} alt="Oh nyo!" />
+      <div className="Box">
+        <div className="TopSection">
+          <Button functionality={cycleBackward} forward={false} />
+          <div className="Picture">
+            <img
+              src={images[index]}
+              alt="Oh nyo!"
+              onAnimationEnd={() => setSlide(0)}
+              slide={slide}
+            />
+          </div>
+          <Button functionality={cycleForward} forward={true} />
         </div>
-        <Button functionality={cycleForward} forward={true} />
+        <Progress seconds={seconds} time={time} />
       </div>
-      <Progress seconds={seconds} time={time} />
+      <Dots images={images} index={index} />
     </div>
   );
 }

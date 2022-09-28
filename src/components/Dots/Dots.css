@@ -1,0 +1,12 @@
+.Dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 450px) {
+  .Dots {
+    left: 7rem;
+    top: 24rem;
+  }
+}
